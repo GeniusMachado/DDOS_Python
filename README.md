@@ -1,0 +1,1 @@
+Only for educational purpose to stress test your own network under permissions. 
