@@ -4,8 +4,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-LINK = os.getenv("LINK", "YOUR LINK HERE")
-MULTIPLE_USERS = int(os.getenv("MULTIPLE_USERS", "100"))
+LINK = os.getenv("LINK", "https://abc.xyz")
+MULTIPLE_USERS = int(os.getenv("MULTIPLE_USERS", "2000"))
 
 async def worker(session):
     while True:
