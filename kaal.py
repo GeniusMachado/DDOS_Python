@@ -4,7 +4,7 @@ import random
 from curl_cffi.requests import AsyncSession
 
 # Use the official ordering site as noted in their alerts
-link = "https://abc.xyz" 
+link = "https://youalreadyknowwhatogesinhere.haha" 
 
 # List of real-world User-Agents to help mask the script
 USER_AGENTS = [
