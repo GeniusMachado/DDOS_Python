@@ -33,10 +33,7 @@ async def worker(session, worker_id):
                 print(f"[{worker_id}] Unexpected Status: {response.status_code}")
 
         except Exception as e:
-            print(f"[{worker_id}] Connection error: {e}")
-        
-        
-        
+            print(f"[{worker_id}] Connection error: {e}")        
         await asyncio.sleep(random.uniform(2.0, 5.0)) 
 
 async def run_async_loop(users_per_core, core_index):
