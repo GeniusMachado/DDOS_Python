@@ -9,11 +9,9 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1"
 ]
-
 async def worker(session, worker_id):
     while True:
-        try:
-            
+        try: 
             headers = {"User-Agent": random.choice(USER_AGENTS)}
             
             response = await session.get(link, impersonate="chrome110", headers=headers)
@@ -27,17 +25,12 @@ async def worker(session, worker_id):
                 await asyncio.sleep(int(retry_after))
             else:
                 print(f"[{worker_id}] Unexpected Status: {response.status_code}")
-
         except Exception as e:
             print(f"[{worker_id}] Connection error: {e}")        
         await asyncio.sleep(random.uniform(2.0, 5.0)) 
-
-async def run_async_loop(users_per_core, core_index):
-    async with AsyncSession() as session:
-        
+async def run_async_loop(users_per_core  
         workers = [worker(session, f"Core-{core_index}-U{i}") for i in range(users_per_core)]
         await asyncio.gather(*workers)
-
 def start_process(users_per_core, core_index):
     asyncio.run(run_async_loop(users_per_core, core_index))
 
