@@ -12,8 +12,7 @@ USER_AGENTS = [
 async def worker(session, worker_id):
     while True:
         try: 
-            headers = {"User-Agent": random.choice(USER_AGENTS)}
-            
+            headers = {"User-Agent": random.choice(USER_AGENTS)}            
             response = await session.get(link, impersonate="chrome110", headers=headers)
             
             if response.status_code == 200:
