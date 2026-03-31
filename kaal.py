@@ -12,8 +12,7 @@ USER_AGENTS = [
 async def worker(session, worker_id):
     while True:
         try: 
-            headers = {"User-Agent": random.choice(USER_AGENTS)}
-            
+            headers = {"User-Agent": random.choice(USER_AGENTS)}            
             response = await session.get(link, impersonate="chrome110", headers=headers)
             
             if response.status_code == 200:
@@ -33,7 +32,7 @@ async def run_async_loop(users_per_core
         await asyncio.gather(*workers)
 def start_process(users_per_core, core_index):
     asyncio.run(run_async_loop(users_per_core, core_index))
-
+#the code has started throwing some error after linux re-installation
 if __name__ == "__main__":
         
     total_users = 200000 
