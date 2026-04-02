@@ -1,3 +1,5 @@
+#this still not working... gotta debug and fix that parameter error (argument) but no time yet from interviews 
+
 import asyncio
 import multiprocessing
 import random
